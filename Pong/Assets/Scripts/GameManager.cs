@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour, IManager
     public void PlayerScoreUpdate()
     {
         PlayerScore.text = (int.Parse(PlayerScore.text) + 1).ToString();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         if (int.Parse(PlayerScore.text) > 7)
         {

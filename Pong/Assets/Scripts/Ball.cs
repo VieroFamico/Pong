@@ -44,7 +44,7 @@ public class Ball : MonoBehaviour, IManager
             rb2d.velocity = new Vector2(-1 * initialVelocity.x, Random.Range(-5, 5));
         }
         var speed = CurrentVelocity.magnitude;
-        var direction = Vector3.Reflect(CurrentVelocity.normalized, collision.contacts[0].normal);
+        var direction = Vector3.Reflect(CurrentVelocity.normalized, collision.GetContact(0).normal);
 
         Debug.Log("Out Direction: " + direction);
         rb2d.velocity = direction * Mathf.Max(speed, minVelocity);
